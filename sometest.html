@@ -1,0 +1,49 @@
+<div class="container">
+	<div class="row">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<form method="post">
+         <div class="form">
+            <select name="topic">
+               <option value="Светлана Васильева" selected="selected">Светлана Васильева</option>
+               <option value="Игорь Арбузов">Игорь Арбузов</option>
+               <option value="Евгений Александров">Евгений Александров</option>
+               <option value="Елена Леонидова">Елена Леонидова</option>
+            </select>
+            <input type="radio" name="action" id="option-1" value="subscribe" checked>
+
+            <label for="option-1" class="option option-1">
+               <div class="dot"></div>
+               <span>Подписаться на доклады автора</span>
+            </label>
+            <input type="radio" name="action" id="option-2" value="unsubscribe">
+            <label for="option-2" class="option option-2">
+               <div class="dot"></div>
+               <span>Отписаться от докладов автора</span>
+            </label>
+         </div>
+         <button type="submit">Готово</button>
+      </form>
+		</div>
+		<div class="col-3"></div>
+	</div>
+	<div class="row">
+	<div class="col-2"></div>
+	<div class="col-8">
+		<h4>Мои подписки</h4>
+
+      <% if (subscribedTopics.length==0) { %>
+         <div>Пока вы не подписаны ни на одного автора</div>
+         <% } else { %>
+            <ul>
+               <% for (let n=0; n < (subscribedTopics.length); n++) { %>
+                  <li>
+                     <%- subscribedTopics[n] %>
+                  </li>
+                  <% } %>
+            </ul>
+            <% } %>
+	</div>
+	<div class="col-2"></div>
+	</div>
+</div>
